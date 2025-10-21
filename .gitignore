@@ -19,6 +19,7 @@ x64/
 [Bb]uild[Ll]og.*
 
 *_i.c
+*.vs/
 *_p.c
 *_i.h
 *.ilk
