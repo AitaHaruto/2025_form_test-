@@ -32,8 +32,11 @@ namespace Form_test
 
                     //大きさ設定.
                     testButton1.Size = new Size(50, 50);
+                    //イベントを設定.
+                    testButton1.MouseHover += button1_Click;
                     //テキストを設定.
                     testButton1.Text = $"{cnt}";
+                    testButton1.Tag = cnt;
 
                     testButton1.BackColor = new Color();
 
@@ -42,6 +45,12 @@ namespace Form_test
             }
 
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int num = (int)btn.Tag;
+            MessageBox.Show($"これは{num}個目のボタンです");
+        }
     }
 }
