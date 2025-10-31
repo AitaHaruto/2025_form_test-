@@ -19,27 +19,37 @@ namespace Form_test
         const int BOARD_SIZE_X = 3;
         const int BOARD_SIZE_Y = 3;
 
+        private TestButton[,] _buttonArray;
+
         public Form1()
         {
             
             InitializeComponent();
-            for (int i = 1; i <= BOARD_SIZE_X; i++)
+            //buttonArray　の初期化.
+            _buttonArray = new TestButton[BOARD_SIZE_Y, BOARD_SIZE_X];
+            for (int i = 0; i < BOARD_SIZE_X; i++)
                 
             {
                 
-                for (int j = 1; j <= BOARD_SIZE_Y; j++)
+                for (int j = 0; j < BOARD_SIZE_Y; j++)
                 {
                     
                     TestButton testButton1 = new TestButton(new Point(BUTTON_SIZE_X*j,BUTTON_SIZE_Y*i),
                         new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y  ),"");
+                    _buttonArray[j, i ] = testButton1;
 
 
                     Controls.Add(testButton1);
                 }
             }
+            _buttonArray[2, 2].SetEnable(true);
+        }
+        private void ClickEvent(object sender, EventArgs e)
+        {
 
+
+            
         }
 
-
-    }
+    } 
 }
