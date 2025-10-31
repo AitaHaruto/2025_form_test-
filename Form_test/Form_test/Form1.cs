@@ -17,26 +17,14 @@ namespace Form_test
         {
             int cnt = 0;
             InitializeComponent();
-            for (int i = 1; i <= 4; i++)
+            for (int i = 1; i <= 3; i++)
                 
             {
                 
-                for (int j = 1; j <= 6; j++)
+                for (int j = 1; j <= 3; j++)
                 {
                     cnt = cnt + 1;
-                    TestButton testButton1 = new TestButton();
-
-
-                    //位置設定.
-                    testButton1.Location = new Point(50 * j, 50*i);
-
-                    //大きさ設定.
-                    testButton1.Size = new Size(50, 50);
-                    //イベントを設定.
-                    testButton1.MouseHover += button1_Click;
-                    //テキストを設定.
-                    testButton1.Text = $"{cnt}";
-                    testButton1.Tag = cnt;
+                    TestButton testButton1 = new TestButton(new Point(50*j,50*i),new Size(50,50),"あ");
 
                     testButton1.BackColor = new Color();
 
@@ -46,11 +34,6 @@ namespace Form_test
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            int num = (int)btn.Tag;
-            MessageBox.Show($"これは{num}個目のボタンです");
-        }
+
     }
 }
