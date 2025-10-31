@@ -11,22 +11,28 @@ using System.Windows.Forms;
 namespace Form_test
 {
     public partial class Form1 : Form
-    { 
-       
+    {
+        //constをつけると初期化時にのみ値の変更が可能になる.
+        const int BUTTON_SIZE_X = 100;
+        const int BUTTON_SIZE_Y = 100;
+
+        const int BOARD_SIZE_X = 3;
+        const int BOARD_SIZE_Y = 3;
+
         public Form1()
         {
-            int cnt = 0;
+            
             InitializeComponent();
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= BOARD_SIZE_X; i++)
                 
             {
                 
-                for (int j = 1; j <= 3; j++)
+                for (int j = 1; j <= BOARD_SIZE_Y; j++)
                 {
-                    cnt = cnt + 1;
-                    TestButton testButton1 = new TestButton(new Point(50*j,50*i),new Size(50,50),"あ");
+                    
+                    TestButton testButton1 = new TestButton(new Point(BUTTON_SIZE_X*j,BUTTON_SIZE_Y*i),
+                        new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y  ),"");
 
-                    testButton1.BackColor = new Color();
 
                     Controls.Add(testButton1);
                 }
