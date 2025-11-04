@@ -21,35 +21,43 @@ namespace Form_test
 
         private TestButton[,] _buttonArray;
 
+
+
         public Form1()
         {
-            
+
             InitializeComponent();
             //buttonArray　の初期化.
             _buttonArray = new TestButton[BOARD_SIZE_Y, BOARD_SIZE_X];
             for (int i = 0; i < BOARD_SIZE_X; i++)
-                
+
             {
-                
+
                 for (int j = 0; j < BOARD_SIZE_Y; j++)
                 {
-                    
-                    TestButton testButton1 = new TestButton(new Point(BUTTON_SIZE_X*j,BUTTON_SIZE_Y*i),
-                        new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y  ),"");
-                    _buttonArray[j, i ] = testButton1;
+
+                    TestButton testButton1 = new TestButton(this,i,j,
+                        new Point(BUTTON_SIZE_X * j, BUTTON_SIZE_Y * i),
+                        new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y), "");
+                    _buttonArray[j, i] = testButton1;
 
 
                     Controls.Add(testButton1);
                 }
+                //GetTextButton(0, 0).SetEnable(true);
             }
-            _buttonArray[2, 2].SetEnable(true);
+            //_buttonArray[2, 2].SetEnable(true);
+        }
+        public TestButton GetTextButton(int x, int y)
+        {
+            return _buttonArray[y, x];
         }
         private void ClickEvent(object sender, EventArgs e)
         {
 
 
-            
+
         }
 
-    } 
+    }
 }
