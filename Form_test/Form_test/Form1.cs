@@ -19,16 +19,17 @@ namespace Form_test
         const int BOARD_SIZE_X = 3;
         const int BOARD_SIZE_Y = 3;
 
-        private TestButton[,] _buttonArray;
+        public TestButton[,] _buttonArray;
 
-
+       
 
         public Form1()
         {
 
             InitializeComponent();
-            //buttonArray　の初期化.
-            _buttonArray = new TestButton[BOARD_SIZE_Y, BOARD_SIZE_X];
+           
+                //buttonArray　の初期化.
+                _buttonArray = new TestButton[BOARD_SIZE_Y, BOARD_SIZE_X];
             for (int i = 0; i < BOARD_SIZE_X; i++)
 
             {
@@ -50,12 +51,15 @@ namespace Form_test
         }
         public TestButton GetTextButton(int x, int y)
         {
+            if (x < 0 || x >= BOARD_SIZE_X) return null;
+            if (y < 0 || y >= BOARD_SIZE_X) return null;
+
+
             return _buttonArray[y, x];
         }
         private void ClickEvent(object sender, EventArgs e)
         {
-
-
+           
 
         }
 

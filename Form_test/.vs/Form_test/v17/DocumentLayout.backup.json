@@ -26,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestButton.cs",
+              "DocumentMoniker": "C:\\Users\\NOTAH\\Desktop\\\u52C9\u5F37\u7528\\Form_test\\Form_test\\TestButton.cs",
+              "RelativeDocumentMoniker": "Form_test\\TestButton.cs",
+              "ToolTip": "C:\\Users\\NOTAH\\Desktop\\\u52C9\u5F37\u7528\\Form_test\\Form_test\\TestButton.cs*",
+              "RelativeToolTip": "Form_test\\TestButton.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T05:05:46.937Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,22 +53,9 @@
               "RelativeDocumentMoniker": "Form_test\\Form1.cs",
               "ToolTip": "C:\\Users\\NOTAH\\Desktop\\\u52C9\u5F37\u7528\\Form_test\\Form_test\\Form1.cs",
               "RelativeToolTip": "Form_test\\Form1.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAqwDQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvzgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-24T04:54:59.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestButton.cs",
-              "DocumentMoniker": "C:\\Users\\NOTAH\\Desktop\\\u52C9\u5F37\u7528\\Form_test\\Form_test\\TestButton.cs",
-              "RelativeDocumentMoniker": "Form_test\\TestButton.cs",
-              "ToolTip": "C:\\Users\\NOTAH\\Desktop\\\u52C9\u5F37\u7528\\Form_test\\Form_test\\TestButton.cs",
-              "RelativeToolTip": "Form_test\\TestButton.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAwD4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-24T05:05:46.937Z",
               "EditorCaption": ""
             },
             {
@@ -80,8 +80,7 @@
               "ToolTip": "C:\\Users\\NOTAH\\Desktop\\\u52C9\u5F37\u7528\\Form_test\\Form_test\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
               "RelativeToolTip": "Form_test\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T02:50:04.046Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "WhenOpened": "2025-10-21T02:50:04.046Z"
             }
           ]
         }
