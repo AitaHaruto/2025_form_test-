@@ -87,33 +87,43 @@ namespace Form_test
                 }
             }
 
-            //if (_form1.GetTextButton(0, 0)._enable == true
-            //    && _form1.GetTextButton(0, 1)._enable == true
-            //    && _form1.GetTextButton(0, 2)._enable == true
-            //    && _form1.GetTextButton(1, 0)._enable == true
-            //    && _form1.GetTextButton(1, 1)._enable == true
-            //    && _form1.GetTextButton(1, 2)._enable == true
-            //    && _form1.GetTextButton(2, 0)._enable == true
-            //    && _form1.GetTextButton(2, 1)._enable == true
-            //    && _form1.GetTextButton(2, 2)._enable == true)
-            //{
-            //    MessageBox.Show("おめでとう");
-            //}
-            for (int i = 0; i < 3; i++)
+            if (   _form1.GetTextButton(0, 0)._enable == true
+                && _form1.GetTextButton(0, 1)._enable == true
+                && _form1.GetTextButton(0, 2)._enable == true
+                && _form1.GetTextButton(1, 0)._enable == true
+                && _form1.GetTextButton(1, 1)._enable == true
+                && _form1.GetTextButton(1, 2)._enable == true
+                && _form1.GetTextButton(2, 0)._enable == true
+                && _form1.GetTextButton(2, 1)._enable == true
+                && _form1.GetTextButton(2, 2)._enable == true
+                || _form1.GetTextButton(0, 0)._enable == false
+                && _form1.GetTextButton(0, 1)._enable == false
+                && _form1.GetTextButton(0, 2)._enable == false
+                && _form1.GetTextButton(1, 0)._enable == false
+                && _form1.GetTextButton(1, 1)._enable == false
+                && _form1.GetTextButton(1, 2)._enable == false
+                && _form1.GetTextButton(2, 0)._enable == false
+                && _form1.GetTextButton(2, 1)._enable == false
+                && _form1.GetTextButton(2, 2)._enable == false)
             {
-                for (int j = 0; j < 3; j++)
-                {
-                    if (_form1.GetTextButton(i, j)._enable == false)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("おめでとう");
-                    }
-
-                }
+                MessageBox.Show("おめでとう");
+                Application.Exit();
             }
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    for (int j = 0; j < 3; j++)
+            //    {
+            //        if (_form1.GetTextButton(i, j)._enable == false)
+            //        {
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("おめでとう");
+            //        }
+            //
+            //    }
+            //}
 
 
         }
