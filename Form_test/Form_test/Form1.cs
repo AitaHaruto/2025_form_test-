@@ -57,10 +57,9 @@ namespace Form_test
 
             return _buttonArray[y, x];
         }
-        private void ClickEvent(object sender, EventArgs e)
+        private void ClickEvent(object sender, EventArgs e) 
         {
-           
-
+            
         }
 
     }

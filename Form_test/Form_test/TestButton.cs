@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace Form_test
     {
        //論理型をランダムに返すものを作成.
         private static Random rand = new Random();
-        public bool BoolRandom;
+        private bool BoolRandom;
        
         //onの時の色.
         private Color  _onColor  = Color.Green;
@@ -68,24 +69,53 @@ namespace Form_test
 
         private void ClickEvent(object sender, EventArgs e)
         {
+            
 
-
-           // _form1.GetTextButton(_x , _y)?.Toggle();
-           // _form1.GetTextButton(_x+1, _y)?.Toggle();
-           // _form1.GetTextButton(_x-1, _y)?.Toggle();
-           // _form1.GetTextButton(_x, _y+1)?.Toggle();
-           // _form1.GetTextButton(_x, _y-1)?.Toggle();
+            // _form1.GetTextButton(_x , _y)?.Toggle();
+            // _form1.GetTextButton(_x+1, _y)?.Toggle();
+            // _form1.GetTextButton(_x-1, _y)?.Toggle();
+            // _form1.GetTextButton(_x, _y+1)?.Toggle();
+            // _form1.GetTextButton(_x, _y-1)?.Toggle();
 
             for (int i = 0; i < _toggleData.Length; i++)
             {
                 var data = _toggleData[i];
                 var button = _form1.GetTextButton(_x + data[0], _y + data[1]);
-                if (button != null) 
+                if (button != null)
                 {
                     button.Toggle();
                 }
             }
-          
+
+            //if (_form1.GetTextButton(0, 0)._enable == true
+            //    && _form1.GetTextButton(0, 1)._enable == true
+            //    && _form1.GetTextButton(0, 2)._enable == true
+            //    && _form1.GetTextButton(1, 0)._enable == true
+            //    && _form1.GetTextButton(1, 1)._enable == true
+            //    && _form1.GetTextButton(1, 2)._enable == true
+            //    && _form1.GetTextButton(2, 0)._enable == true
+            //    && _form1.GetTextButton(2, 1)._enable == true
+            //    && _form1.GetTextButton(2, 2)._enable == true)
+            //{
+            //    MessageBox.Show("おめでとう");
+            //}
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (_form1.GetTextButton(i, j)._enable == false)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("おめでとう");
+                    }
+
+                }
+            }
+
+
         }
         private int[][] _toggleData =
         {       new int []  {0,0},
@@ -97,6 +127,9 @@ namespace Form_test
                             
 
         };
+        
+
+
     }
 
 
