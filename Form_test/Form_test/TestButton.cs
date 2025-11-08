@@ -94,7 +94,7 @@ namespace Form_test
                 {
                     if (_form1.GetTextButton(i, j)._enable != state)
                     {
-                        allsame = false;
+                        allsame = !allsame;
                         break;
                     }
                 }
@@ -103,8 +103,22 @@ namespace Form_test
 
             if (allsame)
             {
-                MessageBox.Show("おめでとう");
-                Application.Exit();
+                
+               DialogResult result = MessageBox.Show("ゲームクリア！\r\nもう一度プレイしますか？","",MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {   //ボタンの状態をランダムに変更
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            _form1.GetTextButton(i, j).SetEnable(rand.Next(0, 2) == 0);
+                        }
+                    }
+                }
+                else
+                {
+                    Application.Exit();
+                }
 
             }
 
