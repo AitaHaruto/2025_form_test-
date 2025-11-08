@@ -12,14 +12,14 @@ namespace Form_test
 {
     public class TestButton : Button
     {
-       //論理型をランダムに返すものを作成.
+        //論理型をランダムに返すものを作成.
         private static Random rand = new Random();
         private bool BoolRandom;
-       
+
         //onの時の色.
-        private Color  _onColor  = Color.Green;
+        private Color _onColor = Color.Green;
         //offの時の色.
-        private Color  _offColor = Color.Pink;
+        private Color _offColor = Color.Pink;
         //現在offかonかを判断.
         private bool _enable;
         //座標の取得.
@@ -28,7 +28,7 @@ namespace Form_test
         //横.
         private int _x;
 
-       
+
 
         public void SetEnable(bool on)
         {
@@ -37,7 +37,7 @@ namespace Form_test
             {
                 BackColor = _onColor;
             }
-            else 
+            else
             {
                 BackColor = _offColor;
             }
@@ -49,8 +49,8 @@ namespace Form_test
         }
         //Form1の参照.
         private Form1 _form1;
-        public TestButton(Form1 form1,int x,int y,Point location, Size size, string text)
-        {   
+        public TestButton(Form1 form1, int x, int y, Point location, Size size, string text)
+        {
             //Form1の参照を保管.
             _form1 = form1;
             //座標を保管.
@@ -62,20 +62,16 @@ namespace Form_test
             Text = text;
             SetEnable(BoolRandom);
             Click += ClickEvent;
-             
+
 
 
         }
 
         private void ClickEvent(object sender, EventArgs e)
         {
-            
 
-            // _form1.GetTextButton(_x , _y)?.Toggle();
-            // _form1.GetTextButton(_x+1, _y)?.Toggle();
-            // _form1.GetTextButton(_x-1, _y)?.Toggle();
-            // _form1.GetTextButton(_x, _y+1)?.Toggle();
-            // _form1.GetTextButton(_x, _y-1)?.Toggle();
+           
+
 
             for (int i = 0; i < _toggleData.Length; i++)
             {
@@ -87,43 +83,32 @@ namespace Form_test
                 }
             }
 
-            if (   _form1.GetTextButton(0, 0)._enable == true
-                && _form1.GetTextButton(0, 1)._enable == true
-                && _form1.GetTextButton(0, 2)._enable == true
-                && _form1.GetTextButton(1, 0)._enable == true
-                && _form1.GetTextButton(1, 1)._enable == true
-                && _form1.GetTextButton(1, 2)._enable == true
-                && _form1.GetTextButton(2, 0)._enable == true
-                && _form1.GetTextButton(2, 1)._enable == true
-                && _form1.GetTextButton(2, 2)._enable == true
-                || _form1.GetTextButton(0, 0)._enable == false
-                && _form1.GetTextButton(0, 1)._enable == false
-                && _form1.GetTextButton(0, 2)._enable == false
-                && _form1.GetTextButton(1, 0)._enable == false
-                && _form1.GetTextButton(1, 1)._enable == false
-                && _form1.GetTextButton(1, 2)._enable == false
-                && _form1.GetTextButton(2, 0)._enable == false
-                && _form1.GetTextButton(2, 1)._enable == false
-                && _form1.GetTextButton(2, 2)._enable == false)
+
+           
+            bool state = _form1.GetTextButton(0, 0)._enable;
+            bool allsame = true;
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (_form1.GetTextButton(i, j)._enable != state)
+                    {
+                        allsame = false;
+                        break;
+                    }
+                }
+                if (!allsame) break;
+            }
+
+            if (allsame)
             {
                 MessageBox.Show("おめでとう");
                 Application.Exit();
+
             }
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    for (int j = 0; j < 3; j++)
-            //    {
-            //        if (_form1.GetTextButton(i, j)._enable == false)
-            //        {
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("おめでとう");
-            //        }
-            //
-            //    }
-            //}
+
+
 
 
         }
@@ -134,10 +119,10 @@ namespace Form_test
                 new int []  {0,1},
                 new int []  {0,-1},
 
-                            
+
 
         };
-        
+
 
 
     }
