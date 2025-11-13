@@ -66,25 +66,12 @@ namespace Form_test
 
 
         }
-
-        private void ClickEvent(object sender, EventArgs e)
+        private void StateCheck()
         {
 
-           
 
 
-            for (int i = 0; i < _toggleData.Length; i++)
-            {
-                var data = _toggleData[i];
-                var button = _form1.GetTextButton(_x + data[0], _y + data[1]);
-                if (button != null)
-                {
-                    button.Toggle();
-                }
-            }
 
-
-           
             bool state = _form1.GetTextButton(0, 0)._enable;
             bool allsame = true;
 
@@ -100,13 +87,14 @@ namespace Form_test
                 }
                 if (!allsame) break;
             }
-
             if (allsame)
             {
-                
-               DialogResult result = MessageBox.Show("ゲームクリア！\r\nもう一度プレイしますか？","",MessageBoxButtons.YesNo);
+
+                DialogResult result = MessageBox.Show("ゲームクリア！\r\nもう一度プレイしますか？", "", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {   //ボタンの状態をランダムに変更
+                {
+
+                    //ボタンの状態をランダムに変更
                     for (int i = 0; i < 3; i++)
                     {
                         for (int j = 0; j < 3; j++)
@@ -121,6 +109,28 @@ namespace Form_test
                 }
 
             }
+        }
+        private void Reverse()
+        {
+            for (int i = 0; i < _toggleData.Length; i++)
+            {
+                var data = _toggleData[i];
+                var button = _form1.GetTextButton(_x + data[0], _y + data[1]);
+                if (button != null)
+                {
+                    button.Toggle();
+                }
+            }
+        }
+        private void ClickEvent(object sender, EventArgs e)
+        {
+
+
+            Reverse();
+
+            StateCheck();
+
+           
 
 
 
